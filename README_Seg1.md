@@ -54,30 +54,42 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 ### Triangle Role completed the following tasks:
 
-1. Got the acces to data base that Lauren created, and extracted the data needed for the project.
+1. Got the acces to data base that Lauren created, and extracted the data needed for the project. The following is a part of extracted dataframe.
 
      ![](resources/df_data.jpg)
+     
+   
 
-2. Determined the column which have more than 30 % of missing data, and droped these columns
+2. Determined the column which have more than 30 % of missing data, and droped these columns. The following is the code to achieve this goal.
 
+     ![](resources/the_code.jpg)
 
-3. Decresed the number of numerical features by finding pairwise correlation coefficients, drop one feature from each pair 
-   which has corelation coefficients more than 0.8; hat means these features are strongly dependent, so we can drop one of them. 
-   Four features are   droped in this step. The matrix of correlation coefficiens is given in the following figure:
+   In this step six columns are cleaned.
+   
+
+3. Decresed the number of numerical features by finding pairwise correlation coefficients.The matrix of correlation coefficiens is given in the   following figure:
    
     ![](resources/corr_coef_matrix.jpg)
+    
+    We droped one feature from each pair which has corelation coefficients more than 0.8. Because, correlation coefficient is high so the correlation  between two features in the pair is strong, this means these features are strongly dependent, we can drop one of them. 
+   Four features are   droped in this step.
     
       
 4. Filled the missing data by using KNNInputer with proving that it is the most relevant method, by using distribution graphs before and after as follows:
 
     ![](resources/distributions_before_and_after_inputing.jpg)
 
-
+   We used also two of other method SimpleImputer(strategy=median) and SimpleImputer(strategy=most_frequent); we compare the distributiosns befoer and after inputation, obviously the KNNInputer gave the best result. So we decided to use it. One can see results in the code ![House_Prices.ipynb](.|House_Prices.ipynb).
+   
 5. Decresed the number of categorical features by combination of box and whisker plots and Chi-Squre test, A part of Box and Whisker plot is given in the following figure:
     
      ![](resources/box_and_whisker.jpg)
      
-   If we look at the figure carefully, some of the features have very similar disrtibutions shown by Box Plots. For example "Exterior1st" and   "Exterior2nd". This means they are potentially dependent. We chec this by Chi-Squre test as follows:
+   If we look at the figure carefully, some of the features have very similar disrtibutions shown by Box Plots. For example "Exterior1st" and   "Exterior2nd". This means they are potentially dependent. We check this by Chi-Squre test as follows:
+   
+    ![](resources/Chi_Square.jpg)
+    
+    The conttengincy table above and p-value belove the table show that features "Exterior1st" and   "Exterior2nd" are not independent (they are dependent, one can represent the other in the model). So we can drop one of them. In this method we droped three features.
   
    
    
