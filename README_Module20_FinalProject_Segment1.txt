@@ -1,4 +1,4 @@
-Team members: Elizabeth Ayisi, Lauren Triple, and Durban Caliskan
+Team members: Elizabeth Ayisi, Lauren Triple, and Dursun Caliskan
 ### Segment 1 Project Overview
 
 Square Role - Liz
@@ -68,9 +68,9 @@ Switched to a new branch 'Dursun-Caliskan'
 
 Circle Role completed the following tasks:
   * Created PostgreSQL database through AWS RDS  
-
+![ alt text for screen readers](C:\Users\ltipp\Documents\Lauren school\Data analytics bootcamp\Module20\Final\Images\RDS_database.png)
+RDS_database.png
   * Created IAM roles for group collaboration.
-  
 ![ alt text for screen readers](C:\Users\ltipp\Documents\Lauren school\Data analytics bootcamp\Module20\Final\Images\IAMrole.png)
 IAMrole.png
   * Used pgAdmin to create the table schema in RDS.
@@ -81,7 +81,6 @@ IAMrole.png
   * Uploaded the CSV files to S3. 
 
   * Used Spark on Colab to clean and transform the data.
-  
 ![ alt text for screen readers](C:\Users\ltipp\Documents\Lauren school\Data analytics bootcamp\Module20\Final\Images\ColabCode_Join.png)
 ColabCode_Join.png
   * Load the data from Pandas DataFrames into RDS.
