@@ -46,7 +46,11 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 ### Summary
 Triangle Role completed the following tasks:
-
+ 	* Created colab notebook and used boto and psycopg2 to pull in the data from the PostgreSQL database.
+	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
+	* Turned the table data into dataframe
+	![turn into dataframe](https://user-images.githubusercontent.com/99093289/177671317-1c3e3b91-0dcd-484a-bea1-795e8eb874cb.PNG)
+	* began exploratory analysis of data inorder to prep for a successful machine learning model.
 Square Role completed the following tasks:
 	* Named and created a GitHub repository with a clear README.md
 	* Created individual branches for group collaboration.
