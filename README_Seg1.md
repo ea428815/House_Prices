@@ -83,9 +83,9 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 7. Merged the numerical and categorical dataset
 
-  You can find the script in the following link: 
+  You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
   
-     ![House_Prices.ipyn](.\House_Prices.ipyn)
+     ![](.|House_Prices.ipynb)
 
  * Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL database.
 	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
