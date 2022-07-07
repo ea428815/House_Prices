@@ -1,24 +1,24 @@
-Team members: Elizabeth Ayisi, Lauren Triple, and Durban Caliskan
-### Segment 1 Project Overview
+Team members: Elizabeth Ayisi, Lauren Triple, and Dursun Caliskan
+## Segment 1 Project Overview
 
-Square Role - Liz
+### Square Role - Liz
 The team member in the square role will be responsible for setting up the repository. This includes naming the repository and adding team members.
 Once team members are all on board, it will be your responsibility to ensure everyone has his or her own branch to work from. 
 You can create branches for them or they can create their own. Either way, 
 it's important to separate your work and to keep the main branch free from code in progress.
 
-Triangle Role - Dursun: is responsible for creating a simple machine learning model. 
-Creating a simple model this early in the design process helps a team better understand where and how a machine learning model will fit into the project. 
-This also grants more time to work out the specifics related to machine learning.The first segment is all about preparation, so a simple model will cover the first question—the type of machine learning model chosen and why. 
-To get started, create a simple model that isn't concerned with accuracy.
+### Triangle Role - Dursun: is responsible for creating different machine learning models and comparing their accuracies.
+Since the problem is prediction problem models will be supervised learning, linear regression models. They are
+"Dummy Regressor", "Ridge", "Lasso", "DecisionTree", "AdaBoost", "Bagging", "GradientBoosting", "Random Forest" and "XGBoost Regressor"
 
-Circle Role - Lauren: you're using a SQL-based database, including an ERD of the database and a document pointing out how it is integrated into your database and 
+### Circle Role - Lauren: you're using a SQL-based database, including an ERD of the database and a document pointing out how it is integrated into your database and 
 how it works with the code. You'll need to use either sample data or even fabricated data to test it. When you submit this database for your
 weekly grade, make sure you're submitting the data used for testing as well. Make sure to upload it to the repository along with the rest of the 
 database-related work.
 
 ### Selected Topic
-We will be creating a model that predicts the final price of homes in Ames, Iowa. 
+We will be creating different models that predicts the final price of homes in Ames, Iowa, and comparing their accuracies.
+
 
 ### Data
 The data files provide categorical features about 1400 homes, most datatypes are string and integer. Number of rooms, square feet of rooms, dwelling, zoning, 
