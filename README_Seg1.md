@@ -54,21 +54,29 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 ### Triangle Role completed the following tasks:
 
-1. Got the acces to data base that Lauren created to ge the data neded for th eproject.
-[
-](https://github.com/ea428815/House_Prices/blob/main/resources/df_data.jpg)
+1. Got the acces to data base that Lauren created, and extracted the data needed for the project.
+
+     ![](resources/df_data.jpg)
+
 2. Determined the column which have more than 30 % of missing data, and droped these columns
 
 
-3. Decresed the number of numerical features by finding pairwise correlation coefficients, drop one feature from ecah pair 
-   which has corelation coefficients more than 0.8, that means these features are strongly dependent. Four futures are   droped in this step. 
-   [
-](https://github.com/ea428815/House_Prices/blob/main/resources/corr_coef_matrix.jpg)   
+3. Decresed the number of numerical features by finding pairwise correlation coefficients, drop one feature from each pair 
+   which has corelation coefficients more than 0.8; hat means these features are strongly dependent, so we can drop one of them. 
+   Four features are   droped in this step. The matrix of correlation coefficiens is given in the following figure:
+   
+    ![](resources/corr_coef_matrix.jpg)
+    
+      
 4. Filled the missing data by using KNNInputer with proving that it is the most relevant method, by using distribution graphs before and after as follows:
-[
-](https://github.com/ea428815/House_Prices/blob/main/resources/distributions_before_and_after_inputing.jpg)
-5. Decresed the number of categorical features by combination of box and whisker plots and Chi-Squre test, as seen in the following figure:
-https://github.com/ea428815/House_Prices/blob/main/resources/box_and_whisker.jpg
+
+    ![](resources/distributions_before_and_after_inputing.jpg)
+
+
+5. Decresed the number of categorical features by combination of box and whisker plots and Chi-Squre test, A part of Box and Whisker plot is given in the following figure:
+    
+     ![](resources/box_and_whisker.jpg)
+     
 
 6. Converted the categorical dataset to binary dataset.
 
@@ -76,6 +84,8 @@ https://github.com/ea428815/House_Prices/blob/main/resources/box_and_whisker.jpg
 7. Merged the numerical and categorical dataset
 
   You can find the script in the following link: 
+  
+     ![House_Prices.ipyn](.\House_Prices.ipyn)
 
  * Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL database.
 	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
