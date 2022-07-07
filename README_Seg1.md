@@ -89,14 +89,19 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
    
     ![](resources/Chi_Square.jpg)
     
-    The conttengincy table above and p-value belove the table show that features "Exterior1st" and   "Exterior2nd" are not independent (they are dependent, one can represent the other in the model). So we can drop one of them. In this method we droped three features.
+    The contengincy table above and p-value belove the table show that features "Exterior1st" and   "Exterior2nd" are not independent (they are dependent, one can represent the other in the model). So we can drop one of them. In this method we droped three features.
   
-   
-   
-6. Converted the categorical dataset to binary dataset.
+    
+6. Converted the categorical dataset to binary dataset by using dummies method shown below.
+
+    ![](resources/binary_data_set.jpg)
 
 
-7. Merged the numerical and categorical dataset
+7. Merged the numerical and categorical dataset.
+
+   ![](resources/final_data_shape.jpg)
+   
+   At the end we cleaned the data succesfully to apply the m machine learning models. There are 154 features as seen in the final dataframe.
 
   You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
   
