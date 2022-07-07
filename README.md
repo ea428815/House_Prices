@@ -59,7 +59,7 @@ Square Role completed the following tasks:
 * Named and created a GitHub repository with a clear README.md
 * Created individual branches for group collaboration.
 
-![ alt text for screen readers](base) Elizabeths-MacBook-Pro:houseprices elizabethayisi$ git branch
+![branches](https://user-images.githubusercontent.com/99093289/177673070-a42a6b6d-14f9-4259-8489-7ae32894438e.PNG)
 
 Circle Role completed the following tasks:
   * Created PostgreSQL database through AWS RDS  
