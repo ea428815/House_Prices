@@ -47,7 +47,7 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 ### Summary
 Triangle Role completed the following tasks:
 
- * Created colab notebook and used boto and psycopg2 to pull in the data from the PostgreSQL database.
+ * Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL database.
 	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
 * Turned the table data into dataframe
 	![turn into dataframe](https://user-images.githubusercontent.com/99093289/177671317-1c3e3b91-0dcd-484a-bea1-795e8eb874cb.PNG)
@@ -56,7 +56,7 @@ Triangle Role completed the following tasks:
 	
 	
 Square Role completed the following tasks:
-* Named and created a GitHub repository with a clear README.md
+* Named and created a GitHub repository with a clear README_Seg1.md
 * Created individual branches for group collaboration.
 
 ![branches](https://user-images.githubusercontent.com/99093289/177673070-a42a6b6d-14f9-4259-8489-7ae32894438e.PNG)
@@ -78,7 +78,7 @@ Circle Role completed the following tasks:
   
 ![S3_data](https://user-images.githubusercontent.com/99093289/177669012-559034e8-e0b2-43e0-8885-0361bd12ada2.png)
 
-  * Used Spark on Colab to clean and transform the data.
+  * Used Spark on Colab to clean and transform the data (refer to ipynb file housepricesdatabasedataload.ipynb).
 
 ![ColabCode_Join](https://user-images.githubusercontent.com/99093289/177669029-6a3f9418-a963-4efd-94b9-26f0c75198ac.png)
 
