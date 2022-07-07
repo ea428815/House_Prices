@@ -22,7 +22,8 @@ weekly grade, make sure you're submitting the data used for testing as well. Mak
 database-related work.
 
 ### Selected Topic
-We will be creating different models that predicts the final price of homes in Ames, Iowa, and comparing their accuracies.
+
+We will be creating different models that predict the final price of homes in Ames, Iowa, and comparing their accuracies.
 
 
 ### Data
@@ -35,8 +36,8 @@ PostgreSQL will the the database. We used Google Colab, pandas and pySpark to ex
 The database was created using AWS, RDS.
 
 ** Systems:**
-AWS, RDS, S3, PostgreSQL, spark, pyspark, google colab, pandas
 
+AWS, RDS, S3, PostgreSQL, spark, pyspark, google colab, pandas,numpy, seaborn,sklearn.impute, scipy, scipy.stats
 
 **Files:**
 
@@ -50,7 +51,31 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 
 ### Summary
-Triangle Role completed the following tasks:
+
+### Triangle Role completed the following tasks:
+
+1. Got the acces to data base that Lauren created to ge the data neded for th eproject.
+
+
+2. Determined the column which have more than 30 % of missing data, and droped these columns
+
+
+3. Decresed the number of numerical features by finding pairwise correlation coefficients, drop one feature from ecah pair 
+   which has corelation coefficients more than 0.8, that means these features are strongly dependent. Four futures are   droped in this step. 
+   
+   
+4. Filled the missing data by using KNNInputer with proving that it is the most relevant method, by using distribution graphs before and after as follows:
+
+
+5. Decresed the number of categorical features by combination of box and whisker plots and Chi-Squre test, as seen in the following figure:
+
+
+5. Converted the categorical dataset to binary dataset.
+
+
+6. Merged the numerical and categorical dataset
+
+  You can find the script in the following link: 
 
  * Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL database.
 	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
