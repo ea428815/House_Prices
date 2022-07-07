@@ -77,7 +77,10 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
     
      ![](resources/box_and_whisker.jpg)
      
-
+   If we look at the figure carefully, some of the features have very similar disrtibutions shown by Box Plots. For example "Exterior1st" and   "Exterior2nd". This means they are potentially dependent. We chec this by Chi-Squre test as follows:
+  
+   
+   
 6. Converted the categorical dataset to binary dataset.
 
 
@@ -85,7 +88,6 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
   You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
   
-     ![](.|House_Prices.ipynb)
 
  * Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL database.
 	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
