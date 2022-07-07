@@ -55,25 +55,25 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 ### Triangle Role completed the following tasks:
 
 1. Got the acces to data base that Lauren created to ge the data neded for th eproject.
-
-
+[
+](https://github.com/ea428815/House_Prices/blob/main/resources/df_data.jpg)
 2. Determined the column which have more than 30 % of missing data, and droped these columns
 
 
 3. Decresed the number of numerical features by finding pairwise correlation coefficients, drop one feature from ecah pair 
    which has corelation coefficients more than 0.8, that means these features are strongly dependent. Four futures are   droped in this step. 
-   
-   
+   [
+](https://github.com/ea428815/House_Prices/blob/main/resources/corr_coef_matrix.jpg)   
 4. Filled the missing data by using KNNInputer with proving that it is the most relevant method, by using distribution graphs before and after as follows:
-
-
+[
+](https://github.com/ea428815/House_Prices/blob/main/resources/distributions_before_and_after_inputing.jpg)
 5. Decresed the number of categorical features by combination of box and whisker plots and Chi-Squre test, as seen in the following figure:
+https://github.com/ea428815/House_Prices/blob/main/resources/box_and_whisker.jpg
+
+6. Converted the categorical dataset to binary dataset.
 
 
-5. Converted the categorical dataset to binary dataset.
-
-
-6. Merged the numerical and categorical dataset
+7. Merged the numerical and categorical dataset
 
   You can find the script in the following link: 
 
