@@ -2,16 +2,21 @@ Team members: Elizabeth Ayisi, Lauren Triple, and Dursun Caliskan
 ## Segment 1 Project Overview
 
 ### Square Role - Liz
+
 The team member in the square role will be responsible for setting up the repository. This includes naming the repository and adding team members.
 Once team members are all on board, it will be your responsibility to ensure everyone has his or her own branch to work from. 
 You can create branches for them or they can create their own. Either way, 
 it's important to separate your work and to keep the main branch free from code in progress.
 
-### Triangle Role - Dursun: is responsible for creating different machine learning models and comparing their accuracies.
+### Triangle Role - Dursun:
+
+He is responsible for creating different machine learning models and comparing their accuracies.
 Since the problem is prediction problem models will be supervised learning, linear regression models. They are
 "Dummy Regressor", "Ridge", "Lasso", "DecisionTree", "AdaBoost", "Bagging", "GradientBoosting", "Random Forest" and "XGBoost Regressor"
 
-### Circle Role - Lauren: you're using a SQL-based database, including an ERD of the database and a document pointing out how it is integrated into your database and 
+### Circle Role - Lauren:
+
+you're using a SQL-based database, including an ERD of the database and a document pointing out how it is integrated into your database and 
 how it works with the code. You'll need to use either sample data or even fabricated data to test it. When you submit this database for your
 weekly grade, make sure you're submitting the data used for testing as well. Make sure to upload it to the repository along with the rest of the 
 database-related work.
