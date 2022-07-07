@@ -75,16 +75,20 @@ Circle Role completed the following tasks:
 	* joined_data table: 80 columns, joining both data source files
 
   * Uploaded the CSV files to S3. 
+  
 ![S3_data](https://user-images.githubusercontent.com/99093289/177669012-559034e8-e0b2-43e0-8885-0361bd12ada2.png)
 
   * Used Spark on Colab to clean and transform the data.
+
 ![ColabCode_Join](https://user-images.githubusercontent.com/99093289/177669029-6a3f9418-a963-4efd-94b9-26f0c75198ac.png)
 
 
   * Load the data from Pandas DataFrames into RDS.
+  
 ![pgadmin_joined_data](https://user-images.githubusercontent.com/99093289/177669088-1c133c8a-2e2f-4b99-93c1-5183dca1ca01.png)
 
   * Created ERD using pgadmin, however the clean joined_data table was created using Colab and Spark. 
+  
 ![ERD pgerd](https://user-images.githubusercontent.com/99093289/177669126-d287936f-e01f-44a4-98a9-84f7dfec0e84.png)
 
 
