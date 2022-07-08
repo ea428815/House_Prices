@@ -27,12 +27,12 @@ We will be creating different models that predict the final price of homes in Am
 
 
 ### Data
-The data files provide categorical features about 1400 homes, most datatypes are string and integer. Number of rooms, square feet of rooms, dwelling, zoning, 
+The data files provide categorical features about 1460 homes, most datatypes are string and integer. Number of rooms, square feet of rooms, dwelling, zoning, 
 lot size, condition, and sale price are a few of the features.
 
 ### Database Storage
 
-PostgreSQL will the the database. We used Google Colab, pandas and pySpark to explore the data, extract, transform, and load into the database.
+PostgreSQL was used for the database. We used Google Colab, pandas and pySpark to explore the data, extract, transform, and load into the database.
 The database was created using AWS, RDS.
 
 ** Systems:**
