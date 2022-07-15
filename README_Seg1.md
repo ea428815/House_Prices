@@ -8,7 +8,7 @@ Once team members are all on board, it will be your responsibility to ensure eve
 You can create branches for them or they can create their own. Either way, 
 it's important to separate your work and to keep the main branch free from code in progress. This memeber also created the Tableau Visualization to interact with the data.
 
-### Machine Learning Module - Dursun
+### Machine Learning Model - Dursun
 
 He is responsible for creating different machine learning models and comparing their accuracies.
 Since the problem is prediction problem models will be supervised learning, linear regression models. They are
