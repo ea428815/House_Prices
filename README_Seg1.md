@@ -1,25 +1,25 @@
 Team members: Elizabeth Ayisi, Lauren Triple, and Dursun Caliskan
-## Segment 1 Project Overview
+## Project Overview
 
-### Square Role - Liz
+### Visualization and Presentation - Liz
 
-The team member in the square role will be responsible for setting up the repository. This includes naming the repository and adding team members.
+The team member in this role will be responsible for setting up the repository. This includes naming the repository and adding team members.
 Once team members are all on board, it will be your responsibility to ensure everyone has his or her own branch to work from. 
 You can create branches for them or they can create their own. Either way, 
-it's important to separate your work and to keep the main branch free from code in progress.
+it's important to separate your work and to keep the main branch free from code in progress. This memeber also created the Tableau Visualization to interact with the data.
 
-### Triangle Role - Dursun:
+### Machine Learning Module - Dursun
 
 He is responsible for creating different machine learning models and comparing their accuracies.
 Since the problem is prediction problem models will be supervised learning, linear regression models. They are
 "Dummy Regressor", "Ridge", "Lasso", "DecisionTree", "AdaBoost", "Bagging", "GradientBoosting", "Random Forest" and "XGBoost Regressor"
 
-### Circle Role - Lauren:
+### Database Creation - Lauren
 
-you're using a SQL-based database, including an ERD of the database and a document pointing out how it is integrated into your database and 
+You're using a SQL-based database, including an ERD of the database and a document pointing out how it is integrated into your database and 
 how it works with the code. You'll need to use either sample data or even fabricated data to test it. When you submit this database for your
 weekly grade, make sure you're submitting the data used for testing as well. Make sure to upload it to the repository along with the rest of the 
-database-related work.
+database-related work. 
 
 ### Selected Topic
 
@@ -33,9 +33,9 @@ lot size, condition, and sale price are a few of the features.
 ### Database Storage
 
 PostgreSQL was used for the database. We used Google Colab, pandas and pySpark to explore the data, extract, transform, and load into the database.
-The database was created using AWS, RDS.
+The database was created using AWS, RDS. 
 
-** Systems:**
+### Systems
 
 AWS, RDS, S3, PostgreSQL, spark, pyspark, google colab, pandas,numpy, seaborn,sklearn.impute, scipy, scipy.stats
 
@@ -52,14 +52,19 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 ### Summary
 
-### Triangle Role completed the following tasks:
+## Dursun completed the following tasks:
 
-1. Got the acces to data base that Lauren created, and extracted the data needed for the project. The following is a part of extracted dataframe.
+1. Got the access to data base that Lauren created, and extracted the data needed for the project. The following is a part of extracted dataframe.
 
      ![](resources/df_data.jpg)
      
-   
-
+	* Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL 		database.
+	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
+	
+	* Turned the table data into dataframe
+	![turn into dataframe](https://user-images.githubusercontent.com/99093289/177671317-1c3e3b91-0dcd-484a-bea1-795e8eb874cb.PNG)
+	    
+  
 2. Determined the column which have more than 30 % of missing data, and droped these columns. The following is the code to achieve this goal.
 
      ![](resources/the_code.jpg)
@@ -105,22 +110,15 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
   You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
   
-
- * Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL database.
-	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
-* Turned the table data into dataframe
-	![turn into dataframe](https://user-images.githubusercontent.com/99093289/177671317-1c3e3b91-0dcd-484a-bea1-795e8eb874cb.PNG)
-	
-* Began exploratory analysis of data inorder to prep for a successful machine learning model.
-	
-	
-Square Role completed the following tasks:
+  
+## Liz completed the following tasks:
 * Named and created a GitHub repository with a clear README_Seg1.md
+
 * Created individual branches for group collaboration.
 
 ![branches](https://user-images.githubusercontent.com/99093289/177673070-a42a6b6d-14f9-4259-8489-7ae32894438e.PNG)
 
-Circle Role completed the following tasks:
+## Lauren completed the following tasks:
   * Created PostgreSQL database through AWS RDS  
 ![RDS_database](https://user-images.githubusercontent.com/99093289/177668969-ea0c6b99-7e28-40af-87a8-635b75b1edf4.png)
   
@@ -128,16 +126,16 @@ Circle Role completed the following tasks:
 ![IAMrole](https://user-images.githubusercontent.com/99093289/177668985-d616ed9f-0f50-42f4-9ad1-c52da15341c0.png)
 
   * Used pgAdmin to create the table schema in RDS.
-  
 	* House Data; 78 columns with Id as the primary key
 	* Price Data; 2 columns with Id as foreign key
-	* joined_data table: 80 columns, joining both data source files
+	* joined_data table: 80 columns, joining both data source files created in Colab file
+	* joined_sql table: 80 columns, joined with SQL code in PGAdmin
 
-  * Uploaded the CSV files to S3. 
+  * Uploaded the CSV data files to S3. 
   
 ![S3_data](https://user-images.githubusercontent.com/99093289/177669012-559034e8-e0b2-43e0-8885-0361bd12ada2.png)
 
-  * Used Spark on Colab to clean and transform the data (refer to ipynb file housepricesdatabasedataload.ipynb).
+  * Used Spark on Colab to clean and transform the data (refer to ipynb file ![housepricesdatabasedataload.ipynb](.|housepricesdatabasedataload.ipynb)).
 
 ![ColabCode_Join](https://user-images.githubusercontent.com/99093289/177669029-6a3f9418-a963-4efd-94b9-26f0c75198ac.png)
 
@@ -150,6 +148,9 @@ Circle Role completed the following tasks:
   
 ![ERD pgerd](https://user-images.githubusercontent.com/99093289/177669126-d287936f-e01f-44a4-98a9-84f7dfec0e84.png)
 
+  * Created new joined table using SQL code and updated the ERD that shows the connection of the keys.
+  
+  ![](resources/ERD_joined_SQL.png)
 
 ### Attribution
 
