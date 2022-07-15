@@ -150,9 +150,9 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
   * Created new joined table using SQL code and updated the ERD that shows the connection of the keys.
   
- ![](resources/SQLJoin_code.png)
+ ![](resources/SQLJoin_code.PNG)
   
- ![](resources/joined_sql_Table.png)
+ ![](resources/joined_sql_Table.PNG)
   
  ![](resources/ERD_joined_SQL.png)
 
