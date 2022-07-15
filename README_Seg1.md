@@ -126,10 +126,10 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 ![IAMrole](https://user-images.githubusercontent.com/99093289/177668985-d616ed9f-0f50-42f4-9ad1-c52da15341c0.png)
 
   * Used pgAdmin to create the table schema in RDS.
-	* House Data; 78 columns with Id as the primary key
+	* House Data; 80 columns with Id as the primary key
 	* Price Data; 2 columns with Id as foreign key
-	* joined_data table: 80 columns, joining both data source files created in Colab file
-	* joined_sql table: 80 columns, joined with SQL code in PGAdmin
+	* joined_data table: 81 columns, joining both data source files created in Colab file
+	* joined_sql table: 81 columns, joined with SQL code in PGAdmin
 
   * Uploaded the CSV data files to S3. 
   
@@ -150,7 +150,11 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
   * Created new joined table using SQL code and updated the ERD that shows the connection of the keys.
   
-  ![](resources/ERD_joined_SQL.png)
+ ![](resources/SQLJoin_code.PNG)
+  
+ ![](resources/joined_sql_Table.PNG)
+  
+ ![](resources/ERD_joined_SQL.png)
 
 ### Attribution
 
