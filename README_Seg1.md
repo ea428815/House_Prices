@@ -1,4 +1,5 @@
 Team members: Elizabeth Ayisi, Lauren Triple, and Dursun Caliskan
+
 ## Project Overview
 
 ### Visualization and Presentation - Liz
