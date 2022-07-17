@@ -91,7 +91,7 @@ We droped one feature from each pair which has corelation coefficients more than
 
    We used also two of other method SimpleImputer(strategy=median) and SimpleImputer(strategy=most_frequent); we compare the distributiosns befoer and after inputation, obviously the KNNInputer gave the best result. So we decided to use it. One can see results in the code ![House_Prices.ipynb](.|House_Prices.ipynb).
    
-**5.** Decresed the number of categorical features by combination of box and whisker plots and Chi-Squre test, A part of Box and Whisker plot is given in the following figure:
+**5.** Decreased the number of categorical features by combination of box and whisker plots and Chi-Squre test, A part of Box and Whisker plot is given in the following figure:
     
    ![](resources/box_and_whisker.jpg)
      
