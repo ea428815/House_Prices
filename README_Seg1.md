@@ -183,7 +183,104 @@ The code to create the above picture is as folows
 > 
 > plt.show()
 
+**11.** The features (X) and target (y) are extracted and they are splitted as train and test;
+The codes are
 
+> X = df_data_new[[i for i in list(
+     df_data_new.columns) if i != "SalePriceLog"]]
+>
+>  y = df_data_new.loc[:, "SalePriceLog"]
+>  
+>  from sklearn.model_selection import train_test_split
+>
+> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,random_state=42)
+>
+> df_test_new=df_data_new
+>
+> df_test_new.drop(["SalePriceLog"], axis=1, inplace=True) 
+   
+   **Standardize the dataset**
+   
+> from sklearn import preprocessing
+>
+> std_scale = preprocessing.StandardScaler().fit(X_train)
+> 
+> X_train = std_scale.transform(X_train)
+> 
+> X_test = std_scale.transform(X_test)
+>
+> df_test_new = std_scale.transform(df_test_new)
+
+
+**12.** Evaluation of the models
+
+> !pip install xgboost
+> 
+> from sklearn.dummy import DummyRegressor
+> 
+> from sklearn.linear_model import Ridge, Lasso, LinearRegression
+> 
+> from sklearn.tree import DecisionTreeRegressor
+> 
+> from sklearn.ensemble import AdaBoostRegressor, BaggingRegressor, GradientBoostingRegressor, RandomForestRegressor
+> 
+> from xgboost import XGBRegressor
+>
+>
+> dummy_reg = DummyRegressor(strategy="median")
+> 
+> ridge = Ridge(random_state=42)
+> 
+> lasso = Lasso(random_state=42)
+> 
+> dt_reg =  DecisionTreeRegressor(random_state=42)
+> 
+> adaboost = AdaBoostRegressor(random_state=42)
+> 
+> bagging = BaggingRegressor(random_state=42)
+> 
+> gdboost = GradientBoostingRegressor(random_state=42)
+> 
+> rdmforest = RandomForestRegressor(random_state=42)
+> 
+> xgbreg=XGBRegressor(random_state=42)
+
+   ** Creating accuricy matrix**
+   
+> model = [dummy_reg,ridge, lasso, dt_reg,adaboost, bagging, gdboost, rdmforest,xgbreg]
+> dict_model = {}
+
+> for model in model:
+> 
+>    model.fit(X_train, y_train)
+>    
+>    start_time = timeit.default_timer()
+>    
+>    y_pred = model.predict(X_test)
+>    
+>    mae = mean_absolute_error(y_test, y_pred)
+>    
+>    mse = mean_squared_error(y_test, y_pred)
+>    
+>    rmse = np.sqrt(mse)
+>    
+>    r_score = r2_score(y_test, y_pred, multioutput="variance_weighted").round(3)
+>    
+>    dict_model[model] = (mae.round(3), mse.round(3), rmse.round(3), r_score)
+>    
+
+> results = pd.DataFrame(dict_model, index=["MAE", "MSE", "RMSE", "r_score"])
+> 
+> results.columns = ["Dummy Regressor", "Ridge", "Lasso", "DecisionTree",
+                      "AdaBoost", "Bagging", "GradientBoosting", "Random Forest","XGBoost Regressor"]
+>
+> results
+
+  The accuracy matrix is 
+  
+  ![](resources/accuracy_matrix.jpg)
+  
+  
 You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
   
   
