@@ -55,7 +55,7 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 ## Dursun completed the following tasks:
 
-1. Got the access to data base that Lauren created, and extracted the data needed for the project. The following is a part of extracted dataframe.
+**1.** Got the access to data base that Lauren created, and extracted the data needed for the project. The following is a part of extracted dataframe.
 
      ![](resources/df_data.jpg)
      
@@ -66,28 +66,29 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 	![turn into dataframe](https://user-images.githubusercontent.com/99093289/177671317-1c3e3b91-0dcd-484a-bea1-795e8eb874cb.PNG)
 	    
   
-2. Determined the column which have more than 30 % of missing data, and droped these columns. The following is the code to achieve this goal.
+**2.** Determined the column which have more than 30 % of missing data, and droped these columns. The following is the code to achieve this goal.
 
      ![](resources/the_code.jpg)
 
    In this step six columns are cleaned.
    
 
-3. Decresed the number of numerical features by finding pairwise correlation coefficients.The matrix of correlation coefficiens is given in the   following figure:
+**3.** Decresed the number of numerical features by finding pairwise correlation coefficients.The matrix of correlation coefficiens is given in the   following figure:
    
     ![](resources/corr_coef_matrix.jpg)
     
-    We droped one feature from each pair which has corelation coefficients more than 0.8. Because, correlation coefficient is high so the correlation  between two features in the pair is strong, this means these features are strongly dependent, we can drop one of them. 
+    We droped one feature from each pair which has corelation coefficients more than 0.8. Because, correlation coefficient is high so the correlation  between two features in the pair is strong, this means these features are strongly dependent, we can drop one of them.
+    
    Four features are   droped in this step.
     
       
-4. Filled the missing data by using KNNInputer with proving that it is the most relevant method, by using distribution graphs before and after as follows:
+**4.** Filled the missing data by using KNNInputer with proving that it is the most relevant method, by using distribution graphs before and after as follows:
 
     ![](resources/distributions_before_and_after_inputing.jpg)
 
    We used also two of other method SimpleImputer(strategy=median) and SimpleImputer(strategy=most_frequent); we compare the distributiosns befoer and after inputation, obviously the KNNInputer gave the best result. So we decided to use it. One can see results in the code ![House_Prices.ipynb](.|House_Prices.ipynb).
    
-5. Decresed the number of categorical features by combination of box and whisker plots and Chi-Squre test, A part of Box and Whisker plot is given in the following figure:
+**5.** Decresed the number of categorical features by combination of box and whisker plots and Chi-Squre test, A part of Box and Whisker plot is given in the following figure:
     
      ![](resources/box_and_whisker.jpg)
      
@@ -98,18 +99,92 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
     The contengincy table above and p-value belove the table show that features "Exterior1st" and   "Exterior2nd" are not independent (they are dependent, one can represent the other in the model). So we can drop one of them. In this method we droped three features.
   
     
-6. Converted the categorical dataset to binary dataset by using dummies method shown below.
+**6.** Converted the categorical dataset to binary dataset by using dummies method shown below.
 
     ![](resources/binary_data_set.jpg)
 
 
-7. Merged the numerical and categorical dataset.
+**7.** Merged the numerical and categorical dataset.
 
    ![](resources/final_data_shape.jpg)
    
    At the end we cleaned the data succesfully to apply the m machine learning models. There are 154 features as seen in the final dataframe.
+   
+**8.** The Year of construction and the Year of Remodelling variables was transformed into new variables representing the      Age of the House and the Age since the house was remodelled.
 
-  You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
+The new variable are called as 'AgeSinceConst' and 'AgeSinceRemode; after that the columns 'YearBuilt' and 'YearRemodAdd' were droped by the code
+
+> from datetime import date 
+>
+> todays_date = date.today()
+>
+> df_data_new["AgeSinceConst"] = todays_date.year - df_data_new["YearBuilt"]
+>
+> df_data_new.drop(["YearBuilt"], axis=1, inplace=True)
+> 
+**9.** Skewness of continuous feature were checked and log transformation was applied the sekew features by the following     code 
+
+> continuous_features = ["OverallQual", "GrLivArea",
+                       "FullBath", "GarageCars",
+                       "MasVnrArea", "Fireplaces",
+                        "AgeSinceConst", "AgeSinceRemod"]
+> df_skew_verify = df_data_new.loc[:, continuous_features]
+>
+Select features with absolute Skew higher than 0.5
+
+> skew_ft = []
+>
+> for i in continuous_features:
+> 
+>   skew_ft.append(abs(df_skew_verify[i].skew()))
+>
+> df_skewed = pd.DataFrame({"Columns": continuous_features,
+                          "Abs_Skew": skew_ft})
+>
+> sk_features = df_skewed[df_skewed["Abs_Skew"] > 0.5]["Columns"].
+> 
+> for i in sk_features:
+>   
+>   df_data_new[i] = np.log((df_data_new[i])+1)
+
+There are 5 skew features, they are 'GrLivArea', 'MasVnrArea', 'Fireplaces', 'AgeSinceConst'are 'AgeSinceRemod'.
+
+**10.** Log transformation is also applied for the target variable 'SalePrice' to normalize it and the original 'SalePrice' column was droped by 
+
+> df_data_new["SalePriceLog"] = np.log(df_data_new.SalePrice)
+> 
+> df_data_new.drop(["SalePrice"], axis=1, inplace=True)
+
+You can see the distribution of 'SalePrice' before and after log transformation in the following picture:
+
+![](resources/saleprice_distribution.jpg)
+
+The code to create the above picture is as folows
+
+> from sklearn.preprocessing import FunctionTransformer
+> 
+> Y = df_data_new[["SalePrice"]]
+> 
+> logtransformer = FunctionTransformer(np.log, inverse_func = np.exp, check_inverse = True)
+> 
+> Y_log = logtransformer.transform(Y)
+> 
+> fig, axes = plt.subplots(nrows=1, ncols=2, sharex=False, sharey=False, figsize=(20,8))
+> 
+> sns.histplot(data=Y, x='SalePrice', stat="density", ax=axes[0],color='red')
+> 
+> axes[0].set_title("Before Log Transformation", color='black')
+> 
+> sns.histplot(data=Y_log, x='SalePrice', stat="density", ax=axes[1],color='green')
+> 
+> axes[1].set_title("After Log transformation", color='black')
+> 
+> plt.suptitle("Sale Price distribution before and after Log transformation",fontsize=22)
+> 
+> plt.show()
+
+
+You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
   
   
 ## Liz completed the following tasks:
