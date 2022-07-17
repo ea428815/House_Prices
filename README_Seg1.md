@@ -245,7 +245,7 @@ The codes are
 > 
 > xgbreg=XGBRegressor(random_state=42)
 
-   ** Creating accuricy matrix**
+   **Creating accuracy matrix**
    
 > model = [dummy_reg,ridge, lasso, dt_reg,adaboost, bagging, gdboost, rdmforest,xgbreg]
 > dict_model = {}
@@ -280,8 +280,108 @@ The codes are
   
   ![](resources/accuracy_matrix.jpg)
   
-  
-You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
+Among these 9 methods the ones which have r_score (correlation coefficient) more than 0.85 are going to be accepted as accurate models. According to this assumption, methods 'Ridge', 'GradientBoosting', 'Bagging', 'Random Forest' and 'XGBoost Regressor' are acurate, given in descending order according to r_scores.
+
+Although the methods 'DecisionTree' and 'AdaBoost' are not accurate according to our assumption, they are also good enough in accuracy.
+
+The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predicting the house prices in our case.
+
+**13.** Creating dataframe which contains actual saleprices and predicted saleprices 
+
+    **Predicted Sale prices by ridge model**
+    
+> from sklearn.model_selection import GridSearchCV
+>
+> alphas = np.logspace(-5, 5, 50).tolist()
+>
+> tuned_parameters = {"alpha": alphas}
+>
+> ridge_cv = GridSearchCV(Ridge(random_state=42), tuned_parameters, cv=5, n_jobs=-1, verbose=1)
+>
+> ridge_cv.fit(X_train, y_train)
+>
+> ridge_Reg = Ridge(alpha=ridge_cv.best_params_["alpha"])
+>
+> ridge_Reg.fit(X_train, y_train)
+>
+> y_pred = ridge_Reg.predict(X_test)
+>
+> y_pred_ridge = ridge_Reg.predict(df_test_new)
+>
+> saleprice_preds_ridge = np.exp(y_pred_ridge)
+>
+> df_salesprices_with_predictions = pd.DataFrame({"ActSalePrice": df_data['SalePrice'],"SalePriceRidge": saleprice_preds_ridge}) 
+ 
+    **Predicted Sale Prices by Gradient Boosting Regressor**
+
+> GradBoost_Reg=GradientBoostingRegressor(n_estimators=500,max_leaf_nodes=5)
+>
+> GradBoost_Reg.fit(X_train,y_train)
+> 
+> y_pred= GradBoost_Reg.predict(X_test)
+>
+> y_pred_GradBoost = GradBoost_Reg.predict(df_test_new)
+>
+> saleprice_preds_GradBoost = np.exp(y_pred_GradBoost)
+>
+> df_salesprices_with_predictions['SalePriceGradBoost']=saleprice_preds_GradBoost
+
+     **Predicted Sale Prices by Bagging Regressor**
+ 
+> from sklearn.ensemble import BaggingRegressor
+>
+> baggingR = BaggingRegressor()
+> 
+> baggingR.fit(X_train,y_train)
+>
+> y_pred= baggingR.predict(X_test)
+>
+> y_pred_Bagging = baggingR.predict(df_test_new)
+>
+> saleprice_preds_Bagging = np.exp(y_pred_Bagging)
+>
+> df_salesprices_with_predictions['SalePriceBagging']=saleprice_preds_Bagging
+
+     **Predicted Sale Prices by Random Forest Regressor**
+     
+> from sklearn.ensemble import RandomForestRegressor
+>
+> RandForR =  RandomForestRegressor()
+> 
+> RandForR.fit(X_train,y_train)
+> 
+> y_pred= RandForR.predict(X_test)
+>
+> y_pred_RandFor = RandForR.predict(df_test_new)
+>
+> saleprice_preds_RandFor = np.exp(y_pred_RandFor)
+>
+> df_salesprices_with_predictions['SalePriceRandFor']=saleprice_preds_RandFor
+
+    **Predicted Sale Prices by XgBoost Regressor**
+    
+> from xgboost import XGBRegressor 
+>
+> XgboostR =  XGBRegressor()
+> 
+> XgboostR.fit(X_train,y_train)
+>
+> y_pred= XgboostR.predict(X_test)
+>
+> y_pred_Xgboost = XgboostR.predict(df_test_new)
+>
+> saleprice_preds_Xgboost = np.exp(y_pred_Xgboost)
+>
+> df_salesprices_with_predictions['SalePriceXgboost']=saleprice_preds_Xgboost
+
+ The result can be founnd in the csv file ![actual_and_predicted_sale_prices](resources/actual_and_predicted_sale_prices.csv)
+ 
+ A perspective of the resultant dataframe is given in the following picture:
+ 
+ ![](resources/actual_and_predicted_saleprices.jpg)
+ 
+
+ You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
   
   
 ## Liz completed the following tasks:
