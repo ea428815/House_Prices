@@ -50,6 +50,8 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 * [Resources/prices.csv](Resources/prices.csv)
 
+* [Resources/Sample_submission.csv](Resources/Sample_submission.csv)
+
 
 ### Summary
 
@@ -388,11 +390,13 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
   
   
 ## Liz completed the following tasks:
-* Named and created a GitHub repository with a clear README_Seg1.md
+* Named and created a GitHub repository with a clear README_Seg1.md (This same README_Seg1 contains READ_Seg2)
 
 * Created individual branches for group collaboration.
 
 ![branches](https://user-images.githubusercontent.com/99093289/177673070-a42a6b6d-14f9-4259-8489-7ae32894438e.PNG)
+
+* Created a blueprint for the dashboard using Tableau with the train.csv and sample_submission.csv
 
 ## Lauren completed the following tasks:
   * Created PostgreSQL database through AWS RDS  
