@@ -1,4 +1,4 @@
-Team members: Elizabeth Ayisi, Lauren Triple, and Dursun Caliskan
+Team members: Elizabeth Ayisi, Lauren Tipple, and Dursun Caliskan
 
 ## Project Overview
 
