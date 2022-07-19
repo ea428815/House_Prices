@@ -52,9 +52,6 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 * [Resources/prices.csv](Resources/prices.csv)
 
-* [Resources/Sample_submission.csv](Resources/Sample_submission.csv)
-
-
 ### Summary
 
 ## Dursun completed the following tasks:
