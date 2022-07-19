@@ -9,6 +9,8 @@ Once team members are all on board, it will be your responsibility to ensure eve
 You can create branches for them or they can create their own. Either way, 
 it's important to separate your work and to keep the main branch free from code in progress. This memeber also created the Tableau Visualization to interact with the data.
 
+#### Google Slide Presentation Link: [Google Slide Presentation](https://docs.google.com/presentation/d/1fbQLs9TsDw1QjUfXXw7MaDj-cBf5Nmi3FydxrKNgQAo/edit?usp=sharing)
+
 ### Machine Learning Model - Dursun
 
 He is responsible for creating different machine learning models and comparing their accuracies.
