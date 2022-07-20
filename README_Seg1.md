@@ -434,7 +434,11 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
  ![](resources/joined_sql_Table.PNG)
   
  ![](resources/ERD_joined_SQL.png)
-
+ 
+   * Added joined_sql.csv file output to S3 bucket for Liz to use in data visualization. Tableau trail does not allow us to sync the database.
+   
+ ![](resources/joined_sql.png)
+ 
 ### Attribution
 
 The dataset was sourced from [https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data].
