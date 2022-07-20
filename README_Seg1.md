@@ -437,7 +437,7 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
  
    * Added joined_sql.csv file output to S3 bucket for Liz to use in data visualization. Tableau trail does not allow us to sync the database.
    
- ![](resources/joined_sql.png)
+ ![](resources/joined_sql.PNG)
  
 ### Attribution
 
