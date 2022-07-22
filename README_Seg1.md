@@ -399,7 +399,7 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
 *
 * Created a Tableau Public Viz and can be accessed by clicking the following link https://public.tableau.com/app/profile/elizabeth8693/viz/PredictingHousePricesinIowa/Segment2_Dasboard
 
-![Dashboard_Segment_2] <img width="1144" alt="Screen Shot 2022-07-22 at 6 04 20 PM" src="https://user-images.githubusercontent.com/62758795/180574713-32c98515-9066-4d87-a9ed-170034d82764.png">
+Dashboard_Segment_2 <img width="1144" alt="Screen Shot 2022-07-22 at 6 04 20 PM" src="https://user-images.githubusercontent.com/62758795/180574713-32c98515-9066-4d87-a9ed-170034d82764.png">
 
 ## Lauren completed the following tasks:
   * Created PostgreSQL database through AWS RDS  
