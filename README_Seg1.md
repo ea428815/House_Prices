@@ -395,7 +395,12 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
 
 ![branches](https://user-images.githubusercontent.com/99093289/177673070-a42a6b6d-14f9-4259-8489-7ae32894438e.PNG)
 
-* Created a blueprint for the dashboard using Tableau with the train.csv and sample_submission.csv
+* Created a blueprint for the dashboard using Tableau with the train.csv and ML data sources.
+*
+* Created a Tableau Public Viz and can be accessed by clicking the following link https://public.tableau.com/app/profile/elizabeth8693/viz/PredictingHousePricesinIowa/Segment2_Dasboard
+
+![Dashboard_Segment_2] (<img width="1144" alt="Screen Shot 2022-07-22 at 6 04 20 PM" src="https://user-images.githubusercontent.com/62758795/180574713-32c98515-9066-4d87-a9ed-170034d82764.png">)
+
 
 ## Lauren completed the following tasks:
   * Created PostgreSQL database through AWS RDS  
