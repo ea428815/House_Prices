@@ -1,4 +1,4 @@
-Team members: Elizabeth Ayisi, Lauren Triple, and Dursun Caliskan
+Team members: Elizabeth Ayisi, Lauren Tipple, and Dursun Caliskan
 
 ## Project Overview
 
@@ -8,6 +8,8 @@ The team member in this role will be responsible for setting up the repository. 
 Once team members are all on board, it will be your responsibility to ensure everyone has his or her own branch to work from. 
 You can create branches for them or they can create their own. Either way, 
 it's important to separate your work and to keep the main branch free from code in progress. This memeber also created the Tableau Visualization to interact with the data.
+
+#### Google Slide Presentation Link: [Google Slide Presentation](https://docs.google.com/presentation/d/1fbQLs9TsDw1QjUfXXw7MaDj-cBf5Nmi3FydxrKNgQAo/edit?usp=sharing)
 
 ### Machine Learning Model - Dursun
 
@@ -49,7 +51,6 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 * [Resources/test.csv](Resources/test.csv)
 
 * [Resources/prices.csv](Resources/prices.csv)
-
 
 ### Summary
 
@@ -593,11 +594,17 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
   
   
 ## Liz completed the following tasks:
-* Named and created a GitHub repository with a clear README_Seg1.md
+* Named and created a GitHub repository with a clear README_Seg1.md (This same README_Seg1 contains READ_Seg2)
 
 * Created individual branches for group collaboration.
 
 ![branches](https://user-images.githubusercontent.com/99093289/177673070-a42a6b6d-14f9-4259-8489-7ae32894438e.PNG)
+
+* Created a blueprint for the dashboard using Tableau with the train.csv and ML data sources.
+*
+* Created a Tableau Public Viz and can be accessed by clicking the following link https://public.tableau.com/app/profile/elizabeth8693/viz/PredictingHousePricesinIowa/Segment2_Dasboard
+
+Dashboard_Segment_2 <img width="1144" alt="Screen Shot 2022-07-22 at 6 04 20 PM" src="https://user-images.githubusercontent.com/62758795/180574713-32c98515-9066-4d87-a9ed-170034d82764.png">
 
 ## Lauren completed the following tasks:
   * Created PostgreSQL database through AWS RDS  
@@ -636,7 +643,11 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
  ![](resources/joined_sql_Table.PNG)
   
  ![](resources/ERD_joined_SQL.png)
-
+ 
+   * Added joined_sql.csv file output to S3 bucket for Liz to use in data visualization. Tableau trail does not allow us to sync the database.
+   
+ ![](resources/joined_sql.PNG)
+ 
 ### Attribution
 
 The dataset was sourced from [https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data].
