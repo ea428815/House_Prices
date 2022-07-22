@@ -55,6 +55,7 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 
 ## Dursun completed the following tasks:
 
+<<<<<<< HEAD
 **1.** Got the access to data base that Lauren created, and extracted the data needed for the project. The following is a part of extracted dataframe. 
 
  ![](resources/df_data.jpg)
@@ -64,6 +65,14 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 	* Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL 		database.
 	
 ![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
+=======
+**1.** Got the access to data base that Lauren created, and extracted the data needed for the project. The following is a part of extracted dataframe.
+
+   ![](resources/df_data.jpg)
+     
+* Created colab notebook, (refer to file House_Prices.ipynb), for machine learning model and used boto and psycopg2 to pull in the data from the PostgreSQL 		database.
+	![connect to data](https://user-images.githubusercontent.com/99093289/177671263-3ebdd12e-5dea-413f-90f4-05b4b2becf95.PNG)
+>>>>>>> Dursun-MachineLearning
 	
 	* Turned the table data into dataframe
 ![turn into dataframe](https://user-images.githubusercontent.com/99093289/177671317-1c3e3b91-0dcd-484a-bea1-795e8eb874cb.PNG)
@@ -79,9 +88,14 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 **3.** Decresed the number of numerical features by finding pairwise correlation coefficients.The matrix of correlation coefficiens is given in the   following figure:
    
    ![](resources/corr_coef_matrix.jpg)
+<<<<<<< HEAD
     
 We droped one feature from each pair which has corelation coefficients more than 0.8. Because, correlation coefficient is high so the correlation  between two features in the pair is strong, this means these features are strongly dependent, we can drop one of them.
     
+=======
+    
+   We droped one feature from each pair which has corelation coefficients more than 0.8. Because, correlation coefficient is high so the correlation  between two features in the pair is strong, this means these features are strongly dependent, we can drop one of them. 
+>>>>>>> Dursun-MachineLearning
    Four features are   droped in this step.
     
       
@@ -99,12 +113,20 @@ We droped one feature from each pair which has corelation coefficients more than
    
    ![](resources/Chi_Square.jpg)
     
+<<<<<<< HEAD
  The contengincy table above and p-value belove the table show that features "Exterior1st" and   "Exterior2nd" are not independent (they are dependent, one can represent the other in the model). So we can drop one of them. In this method we droped three features.
+=======
+   The contengincy table above and p-value belove the table show that features "Exterior1st" and   "Exterior2nd" are not independent (they are dependent, one can represent the other in the model). So we can drop one of them. In this method we droped three features.
+>>>>>>> Dursun-MachineLearning
   
     
 **6.** Converted the categorical dataset to binary dataset by using dummies method shown below.
 
+<<<<<<< HEAD
   ![](resources/binary_data_set.jpg)
+=======
+   ![](resources/binary_data_set.jpg)
+>>>>>>> Dursun-MachineLearning
 
 
 **7.** Merged the numerical and categorical dataset.
@@ -289,6 +311,185 @@ Although the methods 'DecisionTree' and 'AdaBoost' are not accurate according to
 
 The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predicting the house prices in our case.
 
+<<<<<<< HEAD
+=======
+**8.** The Year of construction and the Year of Remodelling variables was transformed into new variables representing the      Age of the House and the Age since the house was remodelled.
+
+The new variable are called as 'AgeSinceConst' and 'AgeSinceRemode; after that the columns 'YearBuilt' and 'YearRemodAdd' were droped by the code
+
+> from datetime import date 
+>
+> todays_date = date.today()
+>
+> df_data_new["AgeSinceConst"] = todays_date.year - df_data_new["YearBuilt"]
+>
+> df_data_new.drop(["YearBuilt"], axis=1, inplace=True)
+> 
+**9.** Skewness of continuous feature were checked and log transformation was applied the sekew features by the following     code 
+
+> continuous_features = ["OverallQual", "GrLivArea",
+                       "FullBath", "GarageCars",
+                       "MasVnrArea", "Fireplaces",
+                        "AgeSinceConst", "AgeSinceRemod"]
+> df_skew_verify = df_data_new.loc[:, continuous_features]
+>
+Select features with absolute Skew higher than 0.5
+
+> skew_ft = []
+>
+> for i in continuous_features:
+> 
+>   skew_ft.append(abs(df_skew_verify[i].skew()))
+>
+> df_skewed = pd.DataFrame({"Columns": continuous_features,
+                          "Abs_Skew": skew_ft})
+>
+> sk_features = df_skewed[df_skewed["Abs_Skew"] > 0.5]["Columns"].
+> 
+> for i in sk_features:
+>   
+>   df_data_new[i] = np.log((df_data_new[i])+1)
+
+There are 5 skew features, they are 'GrLivArea', 'MasVnrArea', 'Fireplaces', 'AgeSinceConst'are 'AgeSinceRemod'.
+
+**10.** Log transformation is also applied for the target variable 'SalePrice' to normalize it and the original 'SalePrice' column was droped by 
+
+> df_data_new["SalePriceLog"] = np.log(df_data_new.SalePrice)
+> 
+> df_data_new.drop(["SalePrice"], axis=1, inplace=True)
+
+You can see the distribution of 'SalePrice' before and after log transformation in the following picture:
+
+![](resources/saleprice_distribution.jpg)
+
+The code to create the above picture is as folows
+
+> from sklearn.preprocessing import FunctionTransformer
+> 
+> Y = df_data_new[["SalePrice"]]
+> 
+> logtransformer = FunctionTransformer(np.log, inverse_func = np.exp, check_inverse = True)
+> 
+> Y_log = logtransformer.transform(Y)
+> 
+> fig, axes = plt.subplots(nrows=1, ncols=2, sharex=False, sharey=False, figsize=(20,8))
+> 
+> sns.histplot(data=Y, x='SalePrice', stat="density", ax=axes[0],color='red')
+> 
+> axes[0].set_title("Before Log Transformation", color='black')
+> 
+> sns.histplot(data=Y_log, x='SalePrice', stat="density", ax=axes[1],color='green')
+> 
+> axes[1].set_title("After Log transformation", color='black')
+> 
+> plt.suptitle("Sale Price distribution before and after Log transformation",fontsize=22)
+> 
+> plt.show()
+
+**11.** The features (X) and target (y) are extracted and they are splitted as train and test;
+The codes are
+
+> X = df_data_new[[i for i in list(
+     df_data_new.columns) if i != "SalePriceLog"]]
+>
+>  y = df_data_new.loc[:, "SalePriceLog"]
+>  
+>  from sklearn.model_selection import train_test_split
+>
+> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,random_state=42)
+>
+> df_test_new=df_data_new
+>
+> df_test_new.drop(["SalePriceLog"], axis=1, inplace=True) 
+   
+   **Standardize the dataset**
+   
+> from sklearn import preprocessing
+>
+> std_scale = preprocessing.StandardScaler().fit(X_train)
+> 
+> X_train = std_scale.transform(X_train)
+> 
+> X_test = std_scale.transform(X_test)
+>
+> df_test_new = std_scale.transform(df_test_new)
+
+
+**12.** Evaluation of the models
+
+> !pip install xgboost
+> 
+> from sklearn.dummy import DummyRegressor
+> 
+> from sklearn.linear_model import Ridge, Lasso, LinearRegression
+> 
+> from sklearn.tree import DecisionTreeRegressor
+> 
+> from sklearn.ensemble import AdaBoostRegressor, BaggingRegressor, GradientBoostingRegressor, RandomForestRegressor
+> 
+> from xgboost import XGBRegressor
+>
+>
+> dummy_reg = DummyRegressor(strategy="median")
+> 
+> ridge = Ridge(random_state=42)
+> 
+> lasso = Lasso(random_state=42)
+> 
+> dt_reg =  DecisionTreeRegressor(random_state=42)
+> 
+> adaboost = AdaBoostRegressor(random_state=42)
+> 
+> bagging = BaggingRegressor(random_state=42)
+> 
+> gdboost = GradientBoostingRegressor(random_state=42)
+> 
+> rdmforest = RandomForestRegressor(random_state=42)
+> 
+> xgbreg=XGBRegressor(random_state=42)
+
+   **Creating accuracy matrix**
+   
+> model = [dummy_reg,ridge, lasso, dt_reg,adaboost, bagging, gdboost, rdmforest,xgbreg]
+> dict_model = {}
+
+> for model in model:
+> 
+>    model.fit(X_train, y_train)
+>    
+>    start_time = timeit.default_timer()
+>    
+>    y_pred = model.predict(X_test)
+>    
+>    mae = mean_absolute_error(y_test, y_pred)
+>    
+>    mse = mean_squared_error(y_test, y_pred)
+>    
+>    rmse = np.sqrt(mse)
+>    
+>    r_score = r2_score(y_test, y_pred, multioutput="variance_weighted").round(3)
+>    
+>    dict_model[model] = (mae.round(3), mse.round(3), rmse.round(3), r_score)
+>    
+
+> results = pd.DataFrame(dict_model, index=["MAE", "MSE", "RMSE", "r_score"])
+> 
+> results.columns = ["Dummy Regressor", "Ridge", "Lasso", "DecisionTree",
+                      "AdaBoost", "Bagging", "GradientBoosting", "Random Forest","XGBoost Regressor"]
+>
+> results
+
+  The accuracy matrix is 
+  
+  ![](resources/accuracy_matrix.jpg)
+  
+Among these 9 methods the ones which have r_score (correlation coefficient) more than 0.85 are going to be accepted as accurate models. According to this assumption, methods 'Ridge', 'GradientBoosting', 'Bagging', 'Random Forest' and 'XGBoost Regressor' are acurate, given in descending order according to r_scores.
+
+Although the methods 'DecisionTree' and 'AdaBoost' are not accurate according to our assumption, they are also good enough in accuracy.
+
+The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predicting the house prices in our case.
+
+>>>>>>> Dursun-MachineLearning
 **13.** Creating dataframe which contains actual saleprices and predicted saleprices 
 
     **Predicted Sale prices by ridge model**
@@ -383,8 +584,12 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
  
  ![](resources/actual_and_predicted_saleprices.jpg)
  
+<<<<<<< HEAD
 
  You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
+=======
+  You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
+>>>>>>> Dursun-MachineLearning
   
   
 ## Liz completed the following tasks:
