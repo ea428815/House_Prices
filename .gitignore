@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.DS_Store
+Dashboard_Segment2_Liz_Lauren_Dursun_HousePrices.pdf
+Liz_Lauren_Dursun_Segment2_HousePrices.pdf
+Liz_Lauren_Dursun_Visualization_House_Prices.twb
