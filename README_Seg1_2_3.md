@@ -89,11 +89,8 @@ Two csv files downloaded from Kaggle. The prices.csv was created in order to per
 **3.** Decresed the number of numerical features by finding pairwise correlation coefficients.The matrix of correlation coefficiens is given in the   following figure:
    
    ![](resources/corr_coef_matrix.jpg)
-<<<<<<< HEAD
     
 We droped one feature from each pair which has corelation coefficients more than 0.8. Because, correlation coefficient is high so the correlation  between two features in the pair is strong, this means these features are strongly dependent, we can drop one of them.
-    
-=======
     
    We droped one feature from each pair which has corelation coefficients more than 0.8. Because, correlation coefficient is high so the correlation  between two features in the pair is strong, this means these features are strongly dependent, we can drop one of them. 
 >>>>>>> Dursun-MachineLearning
@@ -114,20 +111,18 @@ We droped one feature from each pair which has corelation coefficients more than
    
    ![](resources/Chi_Square.jpg)
     
-<<<<<<< HEAD
  The contengincy table above and p-value belove the table show that features "Exterior1st" and   "Exterior2nd" are not independent (they are dependent, one can represent the other in the model). So we can drop one of them. In this method we droped three features.
-=======
+
    The contengincy table above and p-value belove the table show that features "Exterior1st" and   "Exterior2nd" are not independent (they are dependent, one can represent the other in the model). So we can drop one of them. In this method we droped three features.
 >>>>>>> Dursun-MachineLearning
   
     
 **6.** Converted the categorical dataset to binary dataset by using dummies method shown below.
 
-<<<<<<< HEAD
+
   ![](resources/binary_data_set.jpg)
-=======
+  
    ![](resources/binary_data_set.jpg)
->>>>>>> Dursun-MachineLearning
 
 
 **7.** Merged the numerical and categorical dataset.
@@ -312,8 +307,6 @@ Although the methods 'DecisionTree' and 'AdaBoost' are not accurate according to
 
 The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predicting the house prices in our case.
 
-<<<<<<< HEAD
-=======
 **8.** The Year of construction and the Year of Remodelling variables was transformed into new variables representing the      Age of the House and the Age since the house was remodelled.
 
 The new variable are called as 'AgeSinceConst' and 'AgeSinceRemode; after that the columns 'YearBuilt' and 'YearRemodAdd' were droped by the code
@@ -490,7 +483,6 @@ Although the methods 'DecisionTree' and 'AdaBoost' are not accurate according to
 
 The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predicting the house prices in our case.
 
->>>>>>> Dursun-MachineLearning
 **13.** Creating dataframe which contains actual saleprices and predicted saleprices 
 
     **Predicted Sale prices by ridge model**
@@ -585,12 +577,69 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
  
  ![](resources/actual_and_predicted_saleprices.jpg)
  
-<<<<<<< HEAD
+**14.** Three hibrid models were created. By using these best 5 pridictions three more methods were developped:
+     
+   **MinMax Predictor** is the average of minimum and maximum of the best five pridictions.
 
+   **Weigheted Predictor"** is crearted by the weights of minimum and maximum based on the percentage of actual values which are smaller than minimum and prcentage ofv actual values which are more than maximum.
+
+  **Average predictor** is the average of these five prediction.
+  
+  The extended predictions data farem and accuracy tabe is given below:
+  
+  ![](resources/result_predictions.jpg)
+  
+  ![](resources/result_accuracy.jpg)
+  
+  **15.** In order to find out the best model the models are compared by bar graphs with both evaluators, r_square and mean absolute absolute percentage error; by using both test results and all entire data results.
+  Here are bar grapghs:
+  
+  ![](resources/eval_r_score.jpg)
+  
+  ![](resources/eval_mae.jpg)
+  
+  ![](resources/accuracy_r_score.jpg)
+  
+  ![](resources/accuracy_mape.jpg)
+  
+  **16.** According to bar grapghs best 4 model are selected and they are compared by using scatter plots.
+  
+  ![](resources/scatter_ridge_gradboost.jpg)
+  
+  ![](resources/scatter_randfor_gradboost.jpg)
+  
+  ![](resources/scatter_randfor_average.jpg)
+  
+  ![](resources/scatter_average_gradboost.jpg)
+  
+  **17.** According to last comparison it is decided that the best medel is Gradient Bossting Regressor. More analysis on results of best models are made.
+  
+   Visualization by residual plot:
+  
+   ![](resources/residual_plot.jpg)
+   
+   The most effective 5 features:
+  
+  ![](resources/top_5_features.jpg)
+  
+  Data frame containing ecatual prices, the most predicted prices and absolute persentage error of eacch record:
+  
+  ![](resources/best_predicted_prices.jpg)
+  
+  **18.** The results have been loaded to AWS database. It is shown in the following pictures.
+  
+  accuracy taple:
+  
+  ![](resources/aws_database_accuracy.jpg)
+  
+  predictions table:
+  
+  ![](resources/aws_database_predictions.jpg)
+  
+  
  You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
-=======
-  You can find the script in the following link: ![House_Prices.ipynb](.|House_Prices.ipynb)
->>>>>>> Dursun-MachineLearning
+
+
   
   
 ## Liz completed the following tasks:
