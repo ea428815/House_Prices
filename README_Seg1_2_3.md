@@ -641,7 +641,6 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
 
 
   
-  
 ## Liz completed the following tasks:
 * Named and created a GitHub repository with a clear README_Seg1.md (This same README_Seg1 contains READ_Seg2)
 
@@ -650,10 +649,18 @@ The methods 'Dumme Regressor' and 'Lasso' worked in very low accuracy in predict
 ![branches](https://user-images.githubusercontent.com/99093289/177673070-a42a6b6d-14f9-4259-8489-7ae32894438e.PNG)
 
 * Created a blueprint for the dashboard using Tableau with the train.csv and ML data sources.
-*
-* Created a Tableau Public Viz and can be accessed by clicking the following link https://public.tableau.com/app/profile/elizabeth8693/viz/PredictingHousePricesinIowa/Segment2_Dasboard
+* Created a Tableau Public Viz and can be accessed by clicking the following link https://public.tableau.com/app/profile/elizabeth8693/viz/PredictingHousePricesinIowa/Story
+* Created a google slides presentation for this project. Click the following link https://docs.google.com/presentation/d/1fbQLs9TsDw1QjUfXXw7MaDj-cBf5Nmi3FydxrKNgQAo/edit#slide=id.g1f87997393_0_971
 
-Dashboard_Segment_2 <img width="1144" alt="Screen Shot 2022-07-22 at 6 04 20 PM" src="https://user-images.githubusercontent.com/62758795/180574713-32c98515-9066-4d87-a9ed-170034d82764.png">
+* Created a dashboard and included in the presentation. 
+
+<img width="952" alt="Screen Shot 2022-07-28 at 3 50 57 PM" src="https://user-images.githubusercontent.com/62758795/181861795-5a51bf31-b527-4e01-850a-7f522afa8634.png">
+
+<img width="1019" alt="Screen Shot 2022-07-28 at 3 52 01 PM" src="https://user-images.githubusercontent.com/62758795/181861825-e6620c33-4dbf-4d93-9b65-b32e8fc553f4.png">
+
+<img width="1019" alt="Screen Shot 2022-07-28 at 3 51 41 PM" src="https://user-images.githubusercontent.com/62758795/181861834-d01ddf20-efc3-4dca-82b0-3e4ee61eeffc.png">
+
+
 
 ## Lauren completed the following tasks:
   * Created PostgreSQL database through AWS RDS  
